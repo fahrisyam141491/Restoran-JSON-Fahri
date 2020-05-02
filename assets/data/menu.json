@@ -1,0 +1,59 @@
+{
+    "menu": [{
+            "kategori": "makanan",
+            "nama": "chicken crispy",
+            "deskripsi": "Ayam enak dilapisi dengan kulit crspy yang menggoda",
+            "harga": 10000,
+            "gambar": "assets/img/menu/makanan/chicken-crispy.png"
+        },
+        {
+            "kategori": "makanan",
+            "nama": "chicken original",
+            "deskripsi": "Ayam enak dengan bumbu yang maknyoss",
+            "harga": 13000,
+            "gambar": "assets/img/menu/makanan/chicken-original.png"
+        },
+        {
+            "kategori": "makanan",
+            "nama": "chicken tenders",
+            "deskripsi": "Ayam enak yang lembut dibagian kulitnya",
+            "harga": 4000,
+            "gambar": "assets/img/menu/makanan/chicken-tenders.png"
+        },
+        {
+            "kategori": "makanan",
+            "nama": "french fries",
+            "deskripsi": "Kurang enak kalo makan di KFC tanpa kentang goreng",
+            "harga": 14000,
+            "gambar": "assets/img/menu/makanan/french-fries.png"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "pepsi",
+            "deskripsi": "Minuman bersoda yang cocok dipadukan dengan ayam KFC",
+            "harga": 9000,
+            "gambar": "assets/img/menu/minuman/pepsi.png"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "ice tea",
+            "deskripsi": "Es teh yang dibuat secara khusus agar segar dinikmatinya",
+            "harga": 4000,
+            "gambar": "assets/img/menu/minuman/ice-tea.png"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "lemon tea",
+            "deskripsi": "Teh lemon yang rasanya manis-manis asam, seperti cintamu padaku",
+            "harga": 4000,
+            "gambar": "assets/img/menu/minuman/lemon-tea.png"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "orange tea",
+            "deskripsi": "Teh dari jeruk alami yang segar dan menyehatkan",
+            "harga": 5000,
+            "gambar": "assets/img/menu/minuman/orange-tea.png"
+        }
+    ]
+}
