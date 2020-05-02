@@ -2,7 +2,7 @@ function tampilkanAllmenu() {
     $.getJSON("assets/data/menu.json", function (result) {
         var menu = result.menu;
         $.each(menu, function (i, data) {
-            $('#content-menu').append('<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '.00</span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>');
+            $('#content-menu').append('<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '<sup>.00</sup></span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>');
         });
     });
 }
@@ -61,12 +61,12 @@ $('.nav-item').on('click', function () {
         var content = "";
         $.each(menu, function (i, data) {
             if (data.kategori == kategori.toLowerCase()) {
-                content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '.00</span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>';
+                content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '<sup>.00</sup></span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>';
             } else if (kategori == "All menu") {
                 $.getJSON("assets/data/menu.json", function (result) {
                     var menu = result.menu;
                     $.each(menu, function (i, data) {
-                        $('#content-menu').append('<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '.00</span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>');
+                        $('#content-menu').append('<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + data.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + data.nama + ' <span style="display:block;">/ Rp. ' + data.harga + '<sup>.00</sup></span></h4><p class="card-text">' + data.deskripsi + '</p></div></div>');
                     });
                 });
                 return false;
@@ -95,12 +95,12 @@ $('.dropdown-menu-data a').on('click', function () {
     if (sort == "a to z") {
         tempmenu = tempmenu.sort(SortMenu("asc"));
         $.each(tempmenu, function (z, tempmenus) {
-            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + tempmenus.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + tempmenus.nama + ' <span style="display:block;">/ Rp. ' + tempmenus.harga + '.00</span></h4><p class="card-text">' + tempmenus.deskripsi + '</p></div></div>';
+            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + tempmenus.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + tempmenus.nama + ' <span style="display:block;">/ Rp. ' + tempmenus.harga + '<sup>.00</sup></span></h4><p class="card-text">' + tempmenus.deskripsi + '</p></div></div>';
         })
     } else if (sort == "z to a") {
         tempmenu = tempmenu.sort(SortMenu("desc"));
         $.each(tempmenu, function (z, tempmenus) {
-            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + tempmenus.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + tempmenus.nama + ' <span style="display:block;">/ Rp. ' + tempmenus.harga + '.00</span></h4><p class="card-text">' + tempmenus.deskripsi + '</p></div></div>';
+            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + tempmenus.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + tempmenus.nama + ' <span style="display:block;">/ Rp. ' + tempmenus.harga + '<sup>.00</sup></span></h4><p class="card-text">' + tempmenus.deskripsi + '</p></div></div>';
         })
     }
     $('#content-menu').html(content);
@@ -125,12 +125,12 @@ $('.dropdown-menu-harga a').on('click', function () {
     if (sort == "low to high") {
         tempharga = tempharga.sort(SortPrice('asc'));
         $.each(tempharga, function (z, temphargas) {
-            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + temphargas.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + temphargas.nama + ' <span style="display:block;">/ Rp. ' + temphargas.harga + '.00</span></h4><p class="card-text">' + temphargas.deskripsi + '</p></div></div>';
+            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + temphargas.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + temphargas.nama + ' <span style="display:block;">/ Rp. ' + temphargas.harga + '<sup>.00</sup></span></h4><p class="card-text">' + temphargas.deskripsi + '</p></div></div>';
         })
     } else if (sort == "high to low") {
         tempharga = tempharga.sort(SortPrice("desc"));
         $.each(tempharga, function (z, temphargas) {
-            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + temphargas.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + temphargas.nama + ' <span style="display:block;">/ Rp. ' + temphargas.harga + '.00</span></h4><p class="card-text">' + temphargas.deskripsi + '</p></div></div>';
+            content += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><button class="btn btn-light" style="margin:10px;;color:#d0d0d0;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></button><img src="' + temphargas.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + temphargas.nama + ' <span style="display:block;">/ Rp. ' + temphargas.harga + '<sup>.00</sup></span></h4><p class="card-text">' + temphargas.deskripsi + '</p></div></div>';
         })
     }
     $('#content-menu').html(content);
@@ -145,7 +145,7 @@ $('#search-data').keydown(function () {
 
         $.each(data, function (key, val) {
             if ((val.nama.search(regex) != -1) || (val.harga.search(regex) != -1)) {
-                output += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><a href="#" style="margin:10px;background: rgb(109, 109, 100);color:#d4d4d4;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></a><img src="' + val.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + val.nama + ' <span style="display:block;">/ Rp. ' + val.harga + '.00</span></h4><p class="card-text">' + val.deskripsi + '</p></div></div';
+                output += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><a href="#" style="margin:10px;background: rgb(109, 109, 100);color:#d4d4d4;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></a><img src="' + val.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + val.nama + ' <span style="display:block;">/ Rp. ' + val.harga + '<sup>.00</sup></span></h4><p class="card-text">' + val.deskripsi + '</p></div></div';
             }
         });
         $('#content-menu').html(output);
