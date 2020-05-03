@@ -25,6 +25,56 @@ nav.navbar img {
     margin-left: 25px;
 }
 
+.collapse .nav-user {
+    background: #797474;
+    position: absolute;
+    right: 180px;
+    width: 43px;
+    height: 7vh;
+    text-align: center;
+    border-radius: 30px 50px 50px 30px;
+    line-height: 7vh;
+}
+
+.collapse .nav-user a {
+    display: block;
+    position: absolute;
+    font-family: acme;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    color: #212529;
+    box-sizing: border-box;
+    border-bottom: 5px solid #797474;
+    animation-name: animateLeft;
+    animation-duration: 1.5s;
+    font-size: 22px;
+    height: 7vh;
+    width: 120px;
+    background: #d4d4d4;
+    /* text-align: center; */
+    text-decoration: none;
+}
+
+@keyframes animateLeft {
+    from {
+        margin-left: 0;
+        opacity: 0;
+        border-radius: 0 50px 50px 0;
+        background: #797474;
+        font-size: 0;
+        width: 0;
+    }
+
+    to {
+        margin-left: 25px;
+        border-radius: 0;
+        opacity: 1;
+        background: #797474;
+        width: 120px;
+        font-size: 22px;
+    }
+}
+
 h4 {
     font-family: allerta stencil;
     font-variant: small-caps;
@@ -94,10 +144,16 @@ span {
     width: 40px;
     height: 4.5vh;
     color: #504e4e;
+    outline: none;
     border-radius: 20px 0 0 20px;
     border: none;
     background: #d4d4d4;
     font-size: 15px;
+}
+
+.container .header .search button:active {
+    background: #504e4e;
+    color: #d4d4d4;
 }
 
 .container .header .text {

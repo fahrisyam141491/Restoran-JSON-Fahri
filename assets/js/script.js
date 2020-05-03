@@ -135,3 +135,19 @@ $('.dropdown-menu-harga a').on('click', function () {
     }
     $('#content-menu').html(content);
 });
+
+
+$('#search-data').keydown(function () {
+    $.getJSON('assets/data/menu.json', function (data) {
+        var search = $('#search-data').val();
+        var regex = new RegExp(search, 'i');
+        var output;
+
+        $.each(data, function (key, val) {
+            if ((val.nama.search(regex) != -1) || (val.harga.search(regex) != -1)) {
+                output += '<div class="card" style="width: 18rem;display:inline-block;margin:20px 26px;"><a href="#" style="margin:10px;background: rgb(109, 109, 100);color:#d4d4d4;border-radius:0 0 0 30px;padding:12px;position:absolute;right:0;"><i class="fa fa-cart-plus"></i></a><img src="' + val.gambar + '" class="card-img-top" style="width:60%;height:60%;margin-left:20%;"><div class="card-body"><h4>' + val.nama + ' <span style="display:block;">/ Rp. ' + val.harga + '<sup>.00</sup></span></h4><p class="card-text">' + val.deskripsi + '</p></div></div';
+            }
+        });
+        $('#content-menu').html(output);
+    })
+})
